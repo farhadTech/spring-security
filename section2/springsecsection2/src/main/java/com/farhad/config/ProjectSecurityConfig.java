@@ -15,6 +15,5 @@ public class ProjectSecurityConfig {
         http.formLogin(withDefaults());
         http.httpBasic(withDefaults());
         return http.build();
-
     }
 }
