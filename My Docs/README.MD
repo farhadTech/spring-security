@@ -580,7 +580,7 @@ public class HelloServlet extends HttpServlet {
     response.getWriter().write("Hello, Servlet API!");
   }
 }
-```
+```s
 
 ## How Spring Boot Uses the Servlet API
 Spring Boot runs on top of the Servlet API and uses it **behind the scenes:**
