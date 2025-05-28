@@ -201,12 +201,8 @@ public void deleteUser(Long id) {
 > Spring provides a `Filter` implementation named `DelegatingFilterProxy` that allows bridging between the Servlet container's lifecycle and Spring's ApplicationContext.
 > The Servlet container allows registering `Filter` instances by using its own standards, but it is not aware of Spring-defined Beans.
 > We can register `DelegatingFilterProxy through` the standard Servlet container mechanism but delegate all the work to a Spring Bean that implements `Filter`.  
-  <br>
-  <br>
 
-***
 ![](./images/delegating_filter_proxy.png)
-***
 
 ***
 _When we add Spring Boot Starter Security dependency then a `SecurityFilterChain` get added. This happens when we add support for spring security.
