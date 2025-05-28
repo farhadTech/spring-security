@@ -19,6 +19,7 @@ public class ProjectSecurityProdConfig {
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
         http
+                .requiresChannel(rcc -> rcc.anyRequest().requiresSecure())
                 .csrf(csrfConfig -> csrfConfig.disable())
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/myAccount", "/myBalance", "/myLoans", "/myCards").authenticated()
