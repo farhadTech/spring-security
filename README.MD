@@ -203,7 +203,10 @@ public void deleteUser(Long id) {
 > We can register `DelegatingFilterProxy through` the standard Servlet container mechanism but delegate all the work to a Spring Bean that implements `Filter`.  
   <br>
   <br>
-![delegating filter proxy](/images/delegating_filter_proxy.png)
+
+***
+![](./images/delegating_filter_proxy.png)
+***
 
 ***
 _When we add Spring Boot Starter Security dependency then a `SecurityFilterChain` get added. This happens when we add support for spring security.
