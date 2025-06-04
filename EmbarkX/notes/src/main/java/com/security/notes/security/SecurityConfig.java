@@ -22,6 +22,7 @@ public class SecurityConfig {
                 .requestMatchers("/admin/**").denyAll()
                 .anyRequest().authenticated());
 //        http.formLogin(withDefaults());
+        http.csrf(csrf -> csrf.disable());
         http.sessionManagement(session ->
             session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
         http.httpBasic(withDefaults());

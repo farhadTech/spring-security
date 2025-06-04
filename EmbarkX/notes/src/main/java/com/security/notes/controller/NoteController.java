@@ -26,18 +26,21 @@ public class NoteController {
     @GetMapping
     public List<Note> getUserNotes(@AuthenticationPrincipal UserDetails userDetails) {
         String username = userDetails.getUsername();
+        System.out.println("USER DETAILS: " + username);
         return noteService.getNotesForUser(username);
     }
 
     @PutMapping("/{noteId}")
     public Note updateNote(@PathVariable Long noteId, @RequestBody String content, @AuthenticationPrincipal UserDetails userDetails) {
         String username = userDetails.getUsername();
+        System.out.println("USER DETAILS: " + username);
         return noteService.updateNoteForUser(noteId, content, username);
     }
 
     @DeleteMapping("/{noteId}")
     public void deleteNote(@PathVariable Long noteId, @AuthenticationPrincipal UserDetails userDetails) {
         String username = userDetails.getUsername();
+        System.out.println("USER DETAILS: " + username);
         noteService.deleteNoteForUser(noteId, username);
     }
 }
