@@ -15,11 +15,24 @@ public class SecurityConfig {
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests((requests) -> requests.anyRequest().authenticated());
-        http.formLogin(withDefaults());
+        http.authorizeHttpRequests((requests) -> requests
+                .requestMatchers("/contact").permitAll()
+                .requestMatchers("/public/**").permitAll()
+                .anyRequest().authenticated());
+//        http.formLogin(withDefaults());
         http.sessionManagement(session ->
             session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
-//        http.httpBasic(withDefaults());
+        http.httpBasic(withDefaults());
         return http.build();
     }
 }
+
+
+/* RequestMatchers is a method uses in spring security to configure which http request should match specific security rules. */
+/* .requestMatchers("/public/**").permitAll(). It means any reqeust that has /public in it. It is going to permit them all. */
+
+/*
+/public/login
+/public/signup
+/public/
+ */
