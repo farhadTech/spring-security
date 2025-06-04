@@ -1,0 +1,1 @@
+What happens is first request is intercepted by authorization filter, and then there is UsernamePasswordAuthenticationFilter filter which comes into action 

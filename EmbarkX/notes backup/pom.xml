@@ -8,11 +8,12 @@
 		<version>3.2.5</version>
 		<relativePath/>
 	</parent>
-	<groupId>com.security</groupId>
+
+	<groupId>com.secure</groupId>
 	<artifactId>notes</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>notes</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Secure notes project</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -32,21 +33,15 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
