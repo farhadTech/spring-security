@@ -46,6 +46,7 @@ public class User{
     private String password;
 
     private boolean accountNonLocked = true;
+    @Column(name = "account_non_expired", nullable = false, columnDefinition = "BOOLEAN DEFAULT TRUE")
     private boolean accountNonExpired = true;
     private boolean credentialsNonExpired = true;
     private boolean enabled = true;
