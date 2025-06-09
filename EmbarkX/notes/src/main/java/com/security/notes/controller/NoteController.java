@@ -17,7 +17,8 @@ public class NoteController {
     private NoteService noteService;
 
     @PostMapping
-    public Note createNote(@RequestBody String content, @AuthenticationPrincipal UserDetails userDetails) {
+    public Note createNote(@RequestBody String content,
+                           @AuthenticationPrincipal UserDetails userDetails) {
         String username = userDetails.getUsername();
         System.out.println("USER DETAILS: " + username);
         return noteService.createNoteForUser(username, content);
@@ -31,14 +32,17 @@ public class NoteController {
     }
 
     @PutMapping("/{noteId}")
-    public Note updateNote(@PathVariable Long noteId, @RequestBody String content, @AuthenticationPrincipal UserDetails userDetails) {
+    public Note updateNote(@PathVariable Long noteId,
+                           @RequestBody String content,
+                           @AuthenticationPrincipal UserDetails userDetails) {
         String username = userDetails.getUsername();
         System.out.println("USER DETAILS: " + username);
         return noteService.updateNoteForUser(noteId, content, username);
     }
 
     @DeleteMapping("/{noteId}")
-    public void deleteNote(@PathVariable Long noteId, @AuthenticationPrincipal UserDetails userDetails) {
+    public void deleteNote(@PathVariable Long noteId,
+                           @AuthenticationPrincipal UserDetails userDetails) {
         String username = userDetails.getUsername();
         System.out.println("USER DETAILS: " + username);
         noteService.deleteNoteForUser(noteId, username);
